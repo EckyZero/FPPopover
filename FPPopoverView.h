@@ -20,13 +20,13 @@ typedef enum FPPopoverArrowDirection: NSUInteger {
     FPPopoverArrowDirectionVertical = FPPopoverArrowDirectionUp | FPPopoverArrowDirectionDown | FPPopoverNoArrow,
     FPPopoverArrowDirectionHorizontal = FPPopoverArrowDirectionLeft | FPPopoverArrowDirectionRight,
     
-    FPPopoverArrowDirectionAny = FPPopoverArrowDirectionUp | FPPopoverArrowDirectionDown | 
+    FPPopoverArrowDirectionAny = FPPopoverArrowDirectionUp | FPPopoverArrowDirectionDown |
     FPPopoverArrowDirectionLeft | FPPopoverArrowDirectionRight
     
 } FPPopoverArrowDirection;
 
 #ifndef FPPopoverArrowDirectionIsVertical
-    #define FPPopoverArrowDirectionIsVertical(direction)    ((direction) == FPPopoverArrowDirectionVertical || (direction) == FPPopoverArrowDirectionUp || (direction) == FPPopoverArrowDirectionDown || (direction) == FPPopoverNoArrow)
+#define FPPopoverArrowDirectionIsVertical(direction)    ((direction) == FPPopoverArrowDirectionVertical || (direction) == FPPopoverArrowDirectionUp || (direction) == FPPopoverArrowDirectionDown || (direction) == FPPopoverNoArrow)
 #endif
 
 #ifndef FPPopoverArrowDirectionIsHorizontal
@@ -39,6 +39,7 @@ typedef enum {
     FPPopoverLightGrayTint,
     FPPopoverGreenTint,
     FPPopoverRedTint,
+    FPPopoverClearTint,
     FPPopoverDefaultTint = FPPopoverBlackTint
 } FPPopoverTint;
 
