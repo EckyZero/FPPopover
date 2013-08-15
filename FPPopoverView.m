@@ -467,7 +467,15 @@
     CGContextSetLineCap(ctx,kCGLineCapRound);
     CGContextSetLineJoin(ctx, kCGLineJoinRound);
     CGContextStrokePath(ctx);
-    CGPathRelease(externalBorderPath);
+    if(externalBorderPath){
+        @try {
+            CGPathRelease(externalBorderPath);
+        }
+        @catch (NSException *exception) {
+            NSLog(@"failed to release externalBorderPath with exception: %@", exception);
+        }
+    }
+
     
     //3D border of the content view
     if(self.draw3dBorder) {
