@@ -467,9 +467,11 @@
     CGContextSetLineCap(ctx,kCGLineCapRound);
     CGContextSetLineJoin(ctx, kCGLineJoinRound);
     CGContextStrokePath(ctx);
-    if(externalBorderPath){
+    if(externalBorderPath ){
         @try {
-            CGPathRelease(externalBorderPath);
+#warning - Fix after demo (crash on the following line)
+//            CGPathRelease(externalBorderPath);
+//            externalBorderPath = NULL;
         }
         @catch (NSException *exception) {
             NSLog(@"failed to release externalBorderPath with exception: %@", exception);
